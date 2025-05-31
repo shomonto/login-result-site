@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login to View Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      padding: 50px;
+    }
+    .login-box, .result-box {
+      background: white;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #message {
+      color: red;
+      text-align: center;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-box" id="loginBox">
+  <h2>Login</h2>
+  <input type="text" id="phone" placeholder="Phone Number">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Log In</button>
+  <div id="message"></div>
+</div>
+
+<div class="result-box hidden" id="resultBox">
+  <h2>Admission Test Result</h2>
+  <p><strong>Unit:</strong> A</p>
+  <p><strong>Admission Roll:</strong> 218404</p>
+  <p><strong>Physics:</strong> 11.75</p>
+  <p><strong>Chemistry:</strong> 9.75</p>
+  <p><strong>Mathematics:</strong> 9.25</p>
+  <p><strong>Biology:</strong> 12.00</p>
+  <p><strong>Bangla:</strong> 0.00</p>
+  <p><strong>English:</strong> 0.00</p>
+  <p><strong>Total Score:</strong> 42.75</p>
+  <p><strong>Merit Position:</strong> 12404</p>
+</div>
+
+<script>
+function login() {
+  const phone = document.getElementById("phone").value;
+  const password = document.getElementById("password").value;
+
+  if (phone === "01756500531" && password === "mukta11") {
+    document.getElementById("loginBox").classList.add("hidden");
+    document.getElementById("resultBox").classList.remove("hidden");
+  } else {
+    document.getElementById("message").innerText = "Invalid phone number or password.";
+  }
+}
+</script>
+
+</body>
+</html>
